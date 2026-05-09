@@ -1,3 +1,14 @@
 body {
-    margin: 100px 800px;
+    text-align: center;
+}
+
+ul{
+    display: inline-block;
+}
+
+#btn-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 20px;
 }

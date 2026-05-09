@@ -2,9 +2,9 @@ let inputEl = document.getElementById("input-field")
 const addBtn = document.getElementById("add-btn")
 let ulEl = document.getElementById("ul-el")
 const deleteAllBtn = document.getElementById("delete-all-btn")
-const updateBtn = document.getElementById("update-btn")
 
 let myTodo = []
+// need to check if this is correct before doing this
 const myProto = {
     "id": "text"
 }
@@ -24,18 +24,18 @@ function show() {
     // lo tenemos que tener vacio para poder agregar una nueva linea por cada loop que haga dentro del array
     let myList = ''
     for (let i = 0; i < myTodo.length; i++) {
-        myList = `<li>${myTodo[i]}</li>`
+        myList += `<li><input type="checkbox"> ${myTodo[i]}</li>`
     }
     // aqui hacemos que agregamos cada valor nuevo 
-    ulEl.innerHTML += myList
+    ulEl.innerHTML = myList
+    console.log(ulEl.querySelectorAll("li")) 
 }
 
 deleteAllBtn.addEventListener("click", function() {
-    myTodo = ""
+    myTodo = []
     ulEl.innerHTML = ""
 })
 
-updateBtn.addEventListener("click", function() {
+function update() {
 
-})
-
+}
