@@ -6,7 +6,7 @@ const deleteAllBtn = document.getElementById("delete-all-btn")
 let myTodo = []
 // need to check if this is correct before doing this
 const myProto = {
-    "id": "text"
+    "Tarea 1": true,
 }
 
 // Varias cosas por definir que otra funcion vamos hacer
@@ -15,7 +15,7 @@ const myProto = {
 
 
 addBtn.addEventListener("click", function() {
-    myTodo.push(inputEl.value)
+    myTodo.push(inputEl.value, false)
     inputEl.value = ""
     show()
 })
@@ -28,14 +28,15 @@ function show() {
     }
     // aqui hacemos que agregamos cada valor nuevo 
     ulEl.innerHTML = myList
-    console.log(ulEl.querySelectorAll("li")) 
+    let checkBoxEl = ulEl.querySelectorAll('input[type="checkbox"]')
+    for (let i = 0; i < checkBoxEl.length; i++) {
+        checkBoxEl[i].addEventListener("click", function() {
+            checkBoxEl[i].parentElement.classList.toggle("cross-li")
+        }) 
+    }
 }
 
 deleteAllBtn.addEventListener("click", function() {
     myTodo = []
     ulEl.innerHTML = ""
 })
-
-function update() {
-
-}

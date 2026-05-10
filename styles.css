@@ -12,3 +12,7 @@ ul{
     margin-top: 10px;
     gap: 20px;
 }
+
+.cross-li {
+    text-decoration: line-through;
+}
