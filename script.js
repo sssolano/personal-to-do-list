@@ -7,7 +7,6 @@ let myTodo = []
 
 addBtn.addEventListener("click", function() {
     myTodo.push({"taskDescription": inputEl.value, "taskFinish": false})
-    console.log(myTodo)
     inputEl.value = ""
     show()
 })
@@ -15,15 +14,16 @@ addBtn.addEventListener("click", function() {
 function show() {
     // lo tenemos que tener vacio para poder agregar una nueva linea por cada loop que haga dentro del array
     let myList = ''
-    for (let i = 0; i < myTodo.length; i++) {
-        myList += `<li><input type="checkbox"> ${myTodo[i].taskDescription}</li>`
+    for (let i = 0; i < myTodo.length; i++) { 
+        myList += myTodo[i].taskFinish === true ? `<li class="cross-li"><input type="checkbox"> ${myTodo[i].taskDescription}</li>` :`<li><input type="checkbox"> ${myTodo[i].taskDescription}</li>`
     }
     // aqui hacemos que agregamos cada valor nuevo 
     ulEl.innerHTML = myList
     let checkBoxEl = ulEl.querySelectorAll('input[type="checkbox"]')
     for (let i = 0; i < checkBoxEl.length; i++) {
-        checkBoxEl[i].addEventListener("click", function() {
+        checkBoxEl[i].addEventListener("click", function() {    
             checkBoxEl[i].parentElement.classList.toggle("cross-li")
+            myTodo[i].taskFinish = !myTodo[i].taskFinish 
         }) 
     }
 }
