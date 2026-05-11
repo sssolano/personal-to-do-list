@@ -1,9 +1,13 @@
 body {
-    text-align: center;
+    background-color: #272724;
+    font-family: "Inter", sans-serif;
 }
 
 ul{
     display: inline-block;
+    color: #FBF8F5;
+    list-style-type: none;
+    margin-bottom: 5px;
 }
 
 #btn-div {
@@ -15,4 +19,58 @@ ul{
 
 .cross-li {
     text-decoration: line-through;
+}
+
+#today-text{
+    color: #B0B6B9;
+    margin-bottom: 0;
+}
+
+#header-text {
+    margin-top: 0;
+    color: #FBF8F5;
+}
+
+#main-div {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 500px;
+    border: 1px solid #B0B6B9;
+    border-radius: 8px;
+    background-color: #353532;
+    height: 400px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.second-div {
+    display: flex;
+    gap: 5px;
+}
+
+#input-field {
+    background: none;
+    border: 1px solid #B0B6B9;
+    border-radius: 3px;
+    padding: 5px;
+    color: #FBF8F5;
+}
+
+#add-btn {
+    background: none;
+    color: #FBF8F5;
+    border: 1px solid #B0B6B9;
+    border-radius: 3px;
+}
+
+#separetor {
+    border-bottom: 1px solid  #B0B6B9;
+}
+
+#delete-all-btn {
+    background: none;
+    color: #FBF8F5;
+    border-radius: 4px;
+    border: 1px solid #B0B6B9;
 }
