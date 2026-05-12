@@ -8,11 +8,12 @@ ul{
     color: #FBF8F5;
     list-style-type: none;
     margin-bottom: 5px;
+    padding-inline-start: 0;
 }
 
 #btn-div {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 10px;
     gap: 20px;
 }
@@ -55,6 +56,7 @@ ul{
     border-radius: 3px;
     padding: 5px;
     color: #FBF8F5;
+    width: 100%;
 }
 
 #add-btn {
@@ -66,11 +68,45 @@ ul{
 
 #separetor {
     border-bottom: 1px solid  #B0B6B9;
+    margin-top: auto;
 }
+
+/* fix this button  */
 
 #delete-all-btn {
     background: none;
     color: #FBF8F5;
     border-radius: 4px;
     border: 1px solid #B0B6B9;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #B0B6B9;
+    color: black;
+    border-radius: 3px;
+    accent-color: #272724;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+}
+
+input[type="checkbox"]:checked::after {
+    content: "✔";
+    accent-color: #272724;
+    position: inherit;
+    cursor: pointer;
+    padding: 0;
+}
+
+#renderMessageTask {
+    color: #B0B6B9;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
