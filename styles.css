@@ -93,6 +93,10 @@ input[type="checkbox"] {
     place-content: center;
 }
 
+input[type="checkbox"]:checked {
+    background-color: #B0B6B9;
+}
+
 input[type="checkbox"]:checked::after {
     content: "✔";
     accent-color: #272724;
