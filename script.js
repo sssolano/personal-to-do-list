@@ -8,9 +8,10 @@ let myTodo = []
 let myTasks = JSON.parse(localStorage.getItem("tasksDesc"))
 if (myTasks === null) {
     myTasks = myTodo
-} 
-
-// crear una variable que haga localStorage.setItem y de ahi subir el taskDescription 
+} else if(myTasks != null) {
+    myTodo = myTasks
+}
+show()
 
 addBtn.addEventListener("click", function() {
     myTodo.push({"taskDescription": inputEl.value, "taskFinish": false})
@@ -38,12 +39,22 @@ function show() {
         checkBoxEl[i].addEventListener("click", function() {    
             checkBoxEl[i].parentElement.querySelector('span').classList.toggle("cross-li")
             myTodo[i].taskFinish = !myTodo[i].taskFinish 
+            localStorage.setItem("tasksDesc", JSON.stringify(myTodo))
+            show()
         }) 
     }
     renderEl.innerHTML = `<p>${counter} of ${myTodo.length} completed</p>`
 }
 
 deleteAllBtn.addEventListener("click", function() {
-    myTodo = []
+    let notCompletedTasks = myTodo.filter( task => {
+        if( task.taskFinish === false) {
+            return true
+        }
+    })
+    myTodo = notCompletedTasks
+    localStorage.getItem("tasksDesc")
+    localStorage.setItem("tasksDesc", JSON.stringify(myTodo))
     ulEl.innerHTML = ""
+    show()
 })
