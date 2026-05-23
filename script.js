@@ -5,9 +5,16 @@ const deleteAllBtn = document.getElementById("delete-all-btn")
 const renderEl = document.getElementById("renderMessageTask")
 
 let myTodo = []
+let myTasks = JSON.parse(localStorage.getItem("tasksDesc"))
+if (myTasks === null) {
+    myTasks = myTodo
+} 
+
+// crear una variable que haga localStorage.setItem y de ahi subir el taskDescription 
 
 addBtn.addEventListener("click", function() {
     myTodo.push({"taskDescription": inputEl.value, "taskFinish": false})
+    localStorage.setItem("tasksDesc", JSON.stringify(myTodo))
     inputEl.value = ""
     show()
 })
